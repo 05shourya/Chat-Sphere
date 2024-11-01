@@ -4,7 +4,7 @@ import ChatTile from './ChatTile'
 import { db } from '../../../../lib/firebase'
 import { doc, getDoc, onSnapshot } from 'firebase/firestore'
 import { useUserStore } from '../../../../lib/userStore'
-import AddUserModal from './addUserModal'
+import AddUserModal from './AddUserModal'
 
 const ChatList = () => {
 	const [addMode, setAddMode] = useState(true)
