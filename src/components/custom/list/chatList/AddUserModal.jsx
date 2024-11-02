@@ -122,7 +122,10 @@ const AddUserModal = () => {
 								value={inputVal}
 								onChange={handleChange}
 								onKeyDown={(e) => {
-									if (e.key === 'Enter') e.preventDefault();
+									if (e.key === 'Enter') {
+										handleSearch()
+									}
+
 								}}
 								autoFocus
 							/>
@@ -137,6 +140,7 @@ const AddUserModal = () => {
 									clipRule="evenodd" />
 							</svg>
 						</label>
+						<div className="btn btn-primary" onClick={handleSearch}>Search</div>
 					</div>
 
 					<div className="flex flex-col gap-4 mt-5">
