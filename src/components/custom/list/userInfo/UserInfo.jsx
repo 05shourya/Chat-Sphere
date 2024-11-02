@@ -49,10 +49,17 @@ const UserInfo = () => {
 						))}
 					</ul>
 				</div>
-				{!chatId && <button className="btn btn-warning" onClick={() => {
-					signOut(auth)
-					clearInfo()
-				}}>Sign out</button>}
+				{(!chatId || window.innerWidth < 768) && (
+					<button
+						className="btn btn-warning"
+						onClick={() => {
+							signOut(auth);
+							clearInfo();
+						}}
+					>
+						Sign out
+					</button>
+				)}
 			</div>
 		</div>
 	);

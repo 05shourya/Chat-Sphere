@@ -7,10 +7,12 @@ import { useUserStore } from '../lib/userStore'
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from '../lib/firebase'
 import { useChatStore } from '../lib/chatStore'
+import { useMobileViewStore } from '../lib/mobileViewStore'
 
 const MainPage = () => {
 	const navigate = useNavigate()
 	const { chatId } = useChatStore()
+	const { activeView } = useMobileViewStore()
 	const { currentUser, isLoading, fetchUserInfo, clearUser } = useUserStore()
 	useEffect(() => {
 
@@ -46,10 +48,22 @@ const MainPage = () => {
 	return (
 		currentUser &&
 		<div className="w-[100vw] h-[100vh] flex">
-			<List />
-			{chatId && <Chat />}
-			{chatId && <Detail />}
+			{/* Desktop View */}
+			<div className="hidden md:flex w-full">
+				<List />
+				{chatId && <Chat />}
+				{chatId && <Detail />}
+			</div>
+
+			{/* Mobile View */}
+			<div className="md:hidden w-full h-full">
+				{activeView === 'list' && <List />}
+				{activeView === 'chat' && chatId && <Chat />}
+				{activeView === 'detail' && chatId && <Detail />}
+			</div>
 		</div>
+
+
 	)
 }
 

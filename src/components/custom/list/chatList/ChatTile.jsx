@@ -1,15 +1,17 @@
-import { useState } from "react";
 import { useChatStore } from "../../../../lib/chatStore";
 import { useUserStore } from "../../../../lib/userStore";
 import { db } from "../../../../lib/firebase";
 import { doc, updateDoc } from "firebase/firestore";
+import { useMobileViewStore } from "../../../../lib/mobileViewStore";
 
 const ChatTile = ({ name, subtitle, avatar, chat, chats }) => {
 	const { changeChat } = useChatStore()
 	const { currentUser } = useUserStore()
+	const { changeView } = useMobileViewStore()
 
 	const handleSelect = async (chat) => {
 		changeChat(chat.chatId, chat.user)
+		changeView('chat')
 
 		const userChats = chats.map((item) => {
 			const { user, ...rest } = item
