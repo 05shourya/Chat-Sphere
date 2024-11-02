@@ -34,7 +34,7 @@ const Detail = () => {
 
 	}
 	return (
-		<div className="flex-1 flex flex-col items-center px-5 pb-5 overflow-scroll justify-center gap-6">
+		<div className="flex-1 flex flex-col items-center px-5 pb-5 overflow-scroll justify-center gap-6 h-[100vh]">
 			<UserDetails />
 			<div className="flex gap-5 w-full justify-center flex-col">
 				<button className="btn btn-accent md:hidden" onClick={() => {

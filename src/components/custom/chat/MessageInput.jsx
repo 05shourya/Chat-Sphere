@@ -78,7 +78,7 @@ const MessageInput = () => {
 	};
 
 	return (
-		<div className='w-full flex p-3 gap-4 items-center'>
+		<div className='w-full flex p-3 gap-4 items-center '>
 			<div className="icons gap-3 flex justify-center items-center relative">
 				<FaceSmileIcon className='h-6 w-6 cursor-pointer' onClick={handleEmojiIconClick} />
 				{open && (

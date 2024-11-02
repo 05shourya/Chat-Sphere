@@ -9,7 +9,7 @@ const Chat = () => {
 		document.documentElement.setAttribute('data-theme', theme)
 	}, [])
 	return (
-		<div className={"flex-[2] flex flex-col border-current border-x"}>
+		<div className={"flex-[2] flex flex-col border-current border-x h-[100vh]"}>
 			<ChatTopBar />
 			<ChatBox />
 			<MessageInput />

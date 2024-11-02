@@ -26,7 +26,7 @@ const ChatBox = () => {
 	}, [chatId])
 
 	return (
-		<div className='flex-1 flex flex-col p-4 overflow-y-scroll'>
+		<div className='flex flex-col p-4 overflow-y-scroll flex-grow md:h-full'>
 			{chats &&
 				chats.messages.map((message, index) => (
 					<div className={`chat ${message.senderId === currentUser?.id ? "chat-end" : "chat-start"}`} key={index}>
