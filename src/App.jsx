@@ -2,10 +2,10 @@ import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Login from './components/custom/login/Login'
 import MainPage from './pages/MainPage'
-import { useState } from 'react';
+import { useEffect } from 'react';
 
 function App() {
-	useState(() => {
+	useEffect(() => {
 		const theme = localStorage.getItem('theme') || 'sunset'
 		document.documentElement.setAttribute('data-theme', theme)
 	}, [])
