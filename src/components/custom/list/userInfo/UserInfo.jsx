@@ -6,7 +6,7 @@ import { auth } from "../../../../lib/firebase";
 const UserInfo = () => {
 	const { currentUser } = useUserStore()
 	const { chatId, clearInfo } = useChatStore()
-	const themes = ['bumblebee', 'dark', 'cupcake', 'synthware', 'forest', 'black', 'coffee', 'sunset']
+	const themes = ['bumblebee', 'dark', 'cupcake', 'forest', 'black', 'coffee', 'sunset']
 	return (
 		<div className="mt-5 flex items-center justify-between px-3">
 			<div className="user flex gap-3 items-center justify-center font-bold text-2xl">
