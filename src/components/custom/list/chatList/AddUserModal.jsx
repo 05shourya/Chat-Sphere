@@ -36,12 +36,13 @@ const AddUserModal = () => {
 
 		try {
 			const userRef = collection(db, "users");
+			const lowerInputVal = inputVal.trim().toLowerCase();
 			const q = query(
 				userRef,
 				orderBy('usernameLower'),
-				startAt(inputVal),
-				endAt(inputVal + '\uf8ff'),
-				limit(5)
+				startAt(lowerInputVal),
+				endAt(lowerInputVal + '\uf8ff'),
+				// limit(5)
 			);
 
 			const querySnapShot = await getDocs(q);
