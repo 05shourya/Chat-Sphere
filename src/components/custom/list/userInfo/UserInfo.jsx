@@ -15,7 +15,7 @@ const UserInfo = () => {
 				</div>
 				<h2>{currentUser.username}</h2>
 			</div>
-			<div className="flex items-center gap-5">
+			<div className="flex items-center gap-5 ">
 				<div className="dropdown mb-0">
 					<div
 						tabIndex="0"
@@ -61,6 +61,7 @@ const UserInfo = () => {
 					</button>
 				)}
 			</div>
+
 		</div>
 	);
 };

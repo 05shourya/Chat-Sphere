@@ -64,7 +64,6 @@ const ChatList = () => {
 				}}>
 					<PlusIcon className='h-7 w-7 ' />
 				</button>
-				<AddUserModal />
 			</div>
 			<div className="chatTileList flex flex-col mt-5 ">
 				{

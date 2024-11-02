@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../../../lib/firebase'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { collection, doc, getDocs, query, setDoc, where } from 'firebase/firestore';
 import upload from '../../../lib/upload';
 import Notification from '../notification/Notification';
@@ -17,6 +17,11 @@ const Login = ({ isLoggingIn }) => {
 	const [isMatching, setIsMatching] = useState(true);
 	const [showPassword, setShowPassword] = useState(false);
 	const togglePasswordVisibility = () => setShowPassword(!showPassword);
+
+	useEffect(() => {
+		const theme = localStorage.getItem('theme') || 'sunset'
+		document.documentElement.setAttribute('data-theme', theme)
+	}, [])
 
 	const handlePasswordChange = (e) => {
 		setPassword(e.target.value);

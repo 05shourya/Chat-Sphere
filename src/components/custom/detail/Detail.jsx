@@ -5,11 +5,16 @@ import UserDetails from "./UserDetails"
 import { useUserStore } from "../../../lib/userStore"
 import { useMobileViewStore } from "../../../lib/mobileViewStore"
 import { ArrowUturnLeftIcon } from "@heroicons/react/16/solid"
+import { useEffect } from "react"
 
 const Detail = () => {
 	const { user, clearInfo, isCurrentUserBlocked, isReceiverBlocked, changeBlock } = useChatStore()
 	const { currentUser } = useUserStore()
 	const { changeView } = useMobileViewStore()
+	useEffect(() => {
+		const theme = localStorage.getItem('theme') || 'sunset'
+		document.documentElement.setAttribute('data-theme', theme)
+	}, [])
 	const handleBlock = async () => {
 		if (!user) return;
 		const userDocRef = doc(db, "users", currentUser.id)

@@ -8,6 +8,7 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from '../lib/firebase'
 import { useChatStore } from '../lib/chatStore'
 import { useMobileViewStore } from '../lib/mobileViewStore'
+import AddUserModal from '../components/custom/list/chatList/AddUserModal'
 
 const MainPage = () => {
 	const navigate = useNavigate()
@@ -25,6 +26,11 @@ const MainPage = () => {
 		})
 		return unSub;
 
+	}, [])
+
+	useEffect(() => {
+		const theme = localStorage.getItem('theme') || 'sunset'
+		document.documentElement.setAttribute('data-theme', theme)
 	}, [])
 
 
@@ -61,8 +67,9 @@ const MainPage = () => {
 				{activeView === 'chat' && chatId && <Chat />}
 				{activeView === 'detail' && chatId && <Detail />}
 			</div>
-		</div>
+			<AddUserModal />
 
+		</div>
 
 	)
 }

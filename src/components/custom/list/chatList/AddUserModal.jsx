@@ -106,7 +106,7 @@ const AddUserModal = () => {
 
 	return (
 		<div>
-			<dialog id="AddUserModal" className="modal">
+			<dialog id="AddUserModal" className="modal modal-middle">
 				<div className="modal-box">
 					<form method="dialog">
 						<button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
@@ -162,6 +162,7 @@ const AddUserModal = () => {
 				</div>
 			</dialog >
 		</div >
+
 	);
 };
 
